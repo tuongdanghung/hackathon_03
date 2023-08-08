@@ -1,1 +1,1 @@
-console.log("basic");
+console.log("advanced");
