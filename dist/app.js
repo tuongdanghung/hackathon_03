@@ -1,19 +1,15 @@
-interface User {
-    id: number;
-    name: string;
-}
-
-const userForm = document.getElementById("userForm") as HTMLFormElement;
-const nameInput = document.getElementById("nameInput") as HTMLInputElement;
-const userList = document.getElementById("userList") as HTMLDivElement;
-let users: User[] = registerLocal();
+"use strict";
+const userForm = document.getElementById("userForm");
+const nameInput = document.getElementById("nameInput");
+const userList = document.getElementById("userList");
+let users = registerLocal();
 console.log(users);
 userForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const name = nameInput.value;
     const maxId = users.reduce((max, user) => Math.max(max, user.id), 0);
     if (name) {
-        const newUser: User = {
+        const newUser = {
             id: users.length == 0 ? 0 : maxId + 1,
             name: name,
         };
@@ -22,13 +18,12 @@ userForm.addEventListener("submit", (event) => {
         userForm.reset();
     }
     if (name.length === 0) {
-        const errAgeElement = document.getElementById("errName") as HTMLElement;
+        const errAgeElement = document.getElementById("errName");
         errAgeElement.style.display = "block";
     }
     const myArrayJson = JSON.stringify(users);
     localStorage.setItem("user", myArrayJson);
 });
-
 function renderUsers() {
     let userl = "";
     users.forEach((user) => {
@@ -38,10 +33,7 @@ function renderUsers() {
                     <button class="delete" data-id="${user.id}">Delete</button>
                 </div>`;
     });
-
-    const userList = document.getElementById(
-        "userList"
-    ) as HTMLTableSectionElement;
+    const userList = document.getElementById("userList");
     userList.innerHTML = userl;
     const deleteButtons = document.querySelectorAll(".delete");
     deleteButtons.forEach((button) => {
@@ -51,16 +43,15 @@ function renderUsers() {
         });
     });
 }
-function handleDelete(userId: number) {
+function handleDelete(userId) {
     users = users.filter((user) => user.id !== userId);
     const myArrayJson = JSON.stringify(users);
     localStorage.setItem("user", myArrayJson);
     renderUsers();
 }
-
 function registerLocal() {
-    const results: string | null = localStorage.getItem("user");
-    const myArray = JSON.parse(results ?? "null");
+    const results = localStorage.getItem("user");
+    const myArray = JSON.parse(results !== null && results !== void 0 ? results : "null");
     return myArray ? myArray : [];
 }
 renderUsers();

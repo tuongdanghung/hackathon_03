@@ -1,9 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>Note App</header>
+            <form id="userForm">
+                <label>Title</label>
+                <input type="text" id="nameInput" placeholder="title" /> <br />
+                <i id="errName">chưa nhập title</i> <br />
+                <button type="submit">Add User</button>
+            </form>
+            <div id="userList" class="full-list"></div>
+        </div>
+    </body>
+    <script type="module" src="./dist/app.js"></script>
 </html>
+<style>
+    .container {
+        width: 700px;
+        margin: auto;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+        padding: 20px;
+        background-color: goldenrod;
+        font-size: 20px;
+    }
+    form {
+        width: 400px;
+        margin: auto;
+        margin-top: 20px;
+        border: 1px solid;
+        padding: 20px;
+    }
+    form input {
+        width: 100%;
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    form i {
+        color: red;
+        display: none;
+    }
+
+    .full-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .list {
+        margin: 10px;
+        border: 1px solid;
+        width: 200px;
+        text-align: center;
+        padding: 20px;
+    }
+</style>
