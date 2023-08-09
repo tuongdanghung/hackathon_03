@@ -78,3 +78,9 @@ button{
 h1{
     text-align: center;
 }
+
+#nameInput{
+    padding:  5px 10px;
+    width: 94%;
+    margin-top: 20px;
+}
