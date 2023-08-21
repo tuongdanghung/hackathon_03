@@ -1,0 +1,86 @@
+.container {
+    width: 700px;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    padding: 20px;
+    background-color: goldenrod;
+    font-size: 20px;
+}
+form {
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid;
+    padding: 20px;
+}
+form input {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+form i {
+    color: red;
+    display: none;
+}
+
+.userList{
+    width: 100%;
+}
+.list {
+    margin: 10px;
+    border: 1px solid;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.point{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.point button{
+    margin: 20px;
+}
+
+.delete{
+    background: none;
+    border: none;
+}
+
+.delete:hover{
+    color: red;
+}
+
+.icon-item{
+    display: flex;
+    align-items: center;
+}
+
+.typo{
+    display: block;
+    margin: 0 10px;
+}
+
+i{
+    font-size: 20px;
+}
+
+button{
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+}
+
+#nameInput{
+    padding:  5px 10px;
+    width: 94%;
+    margin-top: 20px;
+}
